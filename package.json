@@ -1,0 +1,18 @@
+{
+  "name": "dummy-rest-api",
+  "version": "1.0.0",
+  "description": "Dummy-REST-API is a free online REST API that you can use whenever you need some fake data. A hosted REST-API ready to respond to your requests. Test your front- end against a real API.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtTwis/Dummy-REST-API.git"
+  },
+  "author": "ArtTwis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtTwis/Dummy-REST-API/issues"
+  },
+  "homepage": "https://github.com/ArtTwis/Dummy-REST-API#readme"
+}
