@@ -196,6 +196,32 @@ section#console{
   box-sizing: border-box;
 }
 
+.resourcesMethodDv{
+  width: 100%;
+  height: 50px;
+  background-color: var(--method-backgroundColor);
+  border-radius: 8px;
+  outline: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0px 0px 0px;
+}
+
+.resourcesMethodDv label{
+  width: auto;
+  height: 30px;
+  color: var(--milk);
+  font-family: var(--font-Popppins);
+  font-size: 15px;
+  padding: 4px 8px;
+}
+
+.resourcesContentParentDv{
+  height: 50px;
+  width: 100%;
+}
+
 .resourcesContentDv{
   width: 100%;
   height: 50px;
