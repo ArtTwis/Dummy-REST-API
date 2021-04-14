@@ -12,34 +12,49 @@ app.listen(port, function() {
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.get('/resources', (req, res) => {
+app.get('/api/resources', (req, res) => {
   res.status(200).json({data: assets.resources});
 });
 
-// let Users = [];
-// (assets.users).forEach((user, index) => {
-//   Users.push(setUserContent(user, index));
-// });
+app.get('/api/resources/users', (req, res) => {
+  let Users = [];
+  (assets.users).forEach((user, index) => {
+    Users.push(setUserContent(user, index));
+  });
+  res.status(200).json({"total_users": Users.length, data: Users})
+});
 
-// let todosList = [];
-// (assets.todos).forEach((todo, index) => {
-//   todosList.push(setTodoContent(todo, index));
-// });
+app.get('/api/resources/todos', (req, res) => {
+  let todosList = [];
+  (assets.todos).forEach((todo, index) => {
+    todosList.push(setTodoContent(todo, index));
+  });
+  res.status(200).json({"total_todos": todosList.length, data: todosList})
+});
 
-// let Comments = [];
-// (assets.comments).forEach((comment, index) => {
-//   Comments.push(setCommentsContent(comment, index));
-// });
+app.get('/api/resources/comments', (req, res) => {
+  let Comments = [];
+  (assets.comments).forEach((comment, index) => {
+    Comments.push(setCommentsContent(comment, index));
+  });
+  res.status(200).json({"total_comments": Comments.length, data: Comments})
+});
 
-// let Posts = [];
-// (assets.posts).forEach((post, index) => {
-//   Posts.push(setPostsContent(post, index));
-// });
+app.get('/api/resources/posts', (req, res) => {
+  let Posts = [];
+  (assets.posts).forEach((post, index) => {
+    Posts.push(setPostsContent(post, index));
+  });
+  res.status(200).json({"total_posts": Posts.length, data: Posts})
+});
 
-// let Products = [];
-// (assets.products).forEach((product, index) => {
-//   Products.push(setProductsContent(product, index));
-// });
+app.get('/api/resources/products', (req, res) => {
+  let Products = [];
+  (assets.products).forEach((product, index) => {
+    Products.push(setProductsContent(product, index));
+  });
+  res.status(200).json({"total_products": Products.length, data: Products})
+});
 
 function setUserContent(user, index){
   let mailingServices = ["gmail", "yahoo", "outlook", "hotmail", "onetesthub"];
