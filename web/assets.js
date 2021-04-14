@@ -48,7 +48,19 @@ module.exports = {
     {
       "method": "POST",
       "list": []
-    }
+    },
+    {
+      "method": "PUT",
+      "list": []
+    },
+    {
+      "method": "Delete",
+      "list": []
+    },
+    {
+      "method": "PATCH",
+      "list": []
+    },
   ],
   "users": [
     {
