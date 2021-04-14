@@ -26,6 +26,21 @@ app.get('/resources', (req, res) => {
 //   todosList.push(setTodoContent(todo, index));
 // });
 
+// let Comments = [];
+// (assets.comments).forEach((comment, index) => {
+//   Comments.push(setCommentsContent(comment, index));
+// });
+
+// let Posts = [];
+// (assets.posts).forEach((post, index) => {
+//   Posts.push(setPostsContent(post, index));
+// });
+
+// let Products = [];
+// (assets.products).forEach((product, index) => {
+//   Products.push(setProductsContent(product, index));
+// });
+
 function setUserContent(user, index){
   let mailingServices = ["gmail", "yahoo", "outlook", "hotmail", "onetesthub"];
   let cities = ["Sangaria", "Hanumangarh", "Bathinda", "Delhi", "Kolkata", "Bangalore", "Chennai", "Mysore", "Dharamshala", "Shimla", "Jaipur", "Jodhpur", "Kashmir", "Jammu", "Ladakh", "Leh", "Manali"];
@@ -42,4 +57,20 @@ function setTodoContent(todo, index){
   let boolValues = ["true", "false"];
   todo["isCompleted"] = boolValues[Math.floor(Math.random() * boolValues.length)]
   return {"id": index + 1, ...todo}
+}
+
+function setCommentsContent(comment, index){
+  let mailingServices = ["gmail", "yahoo", "outlook", "hotmail", "onetesthub"];
+  let fullname = ((comment.name).replace(' ', '.')).toLowerCase();
+  let emailId = fullname + "@" + mailingServices[Math.floor(Math.random() * mailingServices.length)] + ".com";
+
+  return {"postId": "11141XXX786", "id": index + 1, "name": comment.name, "sex": comment.sex, "email": emailId, "body": comment.body};
+}
+
+function setPostsContent(post, index){
+  return {"userId": "1412XXX786", "id": index + 1, ...post};
+}
+
+function setProductsContent(product, index){
+  return {"productId": index + 1, ...product};
 }
