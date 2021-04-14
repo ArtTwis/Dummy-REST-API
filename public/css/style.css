@@ -205,7 +205,7 @@ section#console{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 8px 0px 0px 0px;
+  margin: 8px 0px 8px 0px;
 }
 
 .resourcesMethodDv label{
@@ -220,6 +220,7 @@ section#console{
 .resourcesContentParentDv{
   height: 50px;
   width: 100%;
+  margin: 3px 0px;
 }
 
 .resourcesContentDv{
@@ -231,7 +232,6 @@ section#console{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 2px 0px;
 }
 
 .resourcesContentDv:hover,

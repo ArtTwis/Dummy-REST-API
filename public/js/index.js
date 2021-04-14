@@ -1,3 +1,5 @@
+const apiendpoint = 'http://localhost:1818/api';
+
 (function(){
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
@@ -10,19 +12,19 @@
         for(let resource of __response.data){
           resourceContainer.innerHTML += `
           <div data-methodName="${resource.method}" class="resourcesMethodDv resourceMethod">
-          <label data-methodName="${resource.method}" class="resourceMethod flex justify-center align-center">${resource.method}</label>
+            <label data-methodName="${resource.method}" class="resourceMethod flex justify-center align-center">${resource.method}</label>
           </div>
           `;
 
           (resource.list).forEach((__resource) => {
             resourceContainer.innerHTML += `
-            <div data-resourceContent-method="${__resource.method}" class="hide resourcesContentParentDv flex justify-center align-center">
-            <div class="resourcesContentDv">
-              <div class="resourceMethodDv flex justify-center align-center">
-                <label class="resourceMethodLabel">${__resource.method}</label>
+            <div data-resourceContent-method="${__resource.method}" data-resourceMethod="${__resource.method}" data-resourceContent-activity="${__resource.resourceName}}" class="hide resourcesContentParentDv flex justify-center align-center">
+              <div data-resourceMethod="${__resource.method}" data-resourceContent-activity="${__resource.resourceName}}" class="resourcesContentDv">
+                <div data-resourceMethod="${__resource.method}" data-resourceContent-activity="${__resource.resourceName}}" class="resourceMethodDv flex justify-center align-center">
+                  <label data-resourceMethod="${__resource.method}" data-resourceContent-activity="${__resource.resourceName}}" class="resourceMethodLabel">${__resource.method}</label>
+                </div>
+                <label data-resourceMethod="${__resource.method}" data-resourceContent-activity="${__resource.resourceName}}" class="resourceLabel">${__resource.resourceName}</label>
               </div>
-              <label class="resourceLabel">${__resource.resourceName}</label>
-            </div>
             </div>
             `;
           });
@@ -30,7 +32,7 @@
       }
     }
   }
-  xhr.open('GET', 'http://localhost:1818/resources', true);
+  xhr.open('GET', `${apiendpoint}/resources`, true);
   xhr.send();
 })();
 
