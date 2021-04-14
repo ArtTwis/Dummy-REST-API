@@ -1,0 +1,43 @@
+@media only screen and (max-width: 800px) {
+  section#header{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #headerContent_dv{
+    min-height: 175px;
+  }
+
+  #headerContent_dv h1{
+    font-size: 30px;
+  }
+
+  #headerContent_dv hr{
+    margin: 0 25px;
+  }
+
+  #headerContent_dv p{
+    font-size: 15px;
+    margin: 0 40px;
+  }  
+
+  #headerCards_dv{
+    flex-direction: column;
+  }
+
+  .header_card{
+    width: 160px;
+    height: 140px;
+    margin: 10px 0;
+  }
+  
+  .header_cardHeading{
+    font-size: 16px;
+  }
+  
+  .header_cardContent{
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="./media/titleBar/titleBarIcon.png">
+
+  <link id="themeFile" rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mediaQuery.css">
+
+  <title>Dummy REST API's</title>
+</head>
+<body>
+
+  <section id="header">
+    <div id="headerContent_dv">
+      <h1 class="flex justify-center">Dummy REST API's</h1>
+      <hr>
+      <p class="flex justify-center">Ready to use REST-API Service to respond to your requests. Test your front- end against a real API , fake data.</p>
+    </div>
+    <div id="headerCards_dv">
+      <div class="header_card" id="header_card1">
+        <h1 class="header_cardHeading">Fake Data</h1>
+        <p class="header_cardContent">No more tedious sample data creation, we've got it covered.</p>
+      </div>
+
+      <div class="header_card" id="header_card2">
+        <h1 class="header_cardHeading">Real Responses</h1>
+        <p class="header_cardContent">Develop with real response codes. GET, POST, PUT & DELETE supported.</p>
+      </div>
+
+      <div class="header_card" id="header_card3">
+        <h1 class="header_cardHeading">Always-On</h1>
+        <p class="header_cardContent">24/7 free access in your development phases.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="console" class="flex justify-center align-center">
+    <div id="consoleTable_dv">
+      <div id="consoleTable_headingDv">
+        <div class="tableHeadingDv" id="resourcesHeading_dv">
+          <label class="tableHeading_label">Resources</label>
+          <label id="labelResources_Value" class="tableHeading_labelVal"></label>
+        </div>
+        <div class="tableHeadingDv" id="requestHeading_dv">
+          <label class="tableHeading_label">Request</label>
+          <label id="labelRequest_Value" class="tableHeading_labelVal"></label>
+        </div>
+        <div class="tableHeadingDv" id="responseHeading_dv">
+          <label class="tableHeading_label">Response</label>
+          <label id="labelResponse_Value" class="tableHeading_labelVal"></label>
+        </div>
+      </div>
+      <div id="consoleTable_contentDv">
+        <div class="contentDv" id="resources_contentDv"></div>
+        <div class="contentDv" id="request_contentDv"></div>
+        <div class="contentDv contentDv_border" id="response_contentDv"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripting Files -->
+  <script src="./js/index.js"></script>
+</body>
+</html>

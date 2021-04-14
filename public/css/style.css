@@ -1,0 +1,236 @@
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.flex{
+  display: flex;
+}
+
+.grid{
+  display: grid;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.flex-direction-column{
+  flex-direction: column;
+}
+
+.flex-direction-row{
+  flex-direction: row;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.hide{
+  display: none;
+}
+
+section#header{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../media/svg/Dragon-Scales.svg);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 175px calc(100vh - 175px);
+}
+
+#headerContent_dv{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#headerContent_dv h1{
+  color: var(--milk);
+  font-family: var(--font-Popppins_SemiBold);
+  font-size: 40px;
+}
+
+#headerContent_dv hr{
+  color: var(--milk);
+  margin: 0px 75px;
+}
+
+#headerContent_dv p{
+  color: var(--milk);
+  font-family: var(--font-Popppins);
+  font-size: 20px;
+  text-align: center;
+  margin: 0 100px;
+}
+
+#headerCards_dv{
+  width: 100vw;
+  min-height: calc(100vh - 175px);
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header_card{
+  width: 200px;
+  height: 160px;
+  border-radius: 10%;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background-color: var(--card-background-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 11px 21px 0px rgba(255, 255, 255, 0.75);
+}
+
+#header_card1{
+  background-image: url(../media/svg/wave_bg_1.svg);
+}
+
+#header_card2{
+  background-image: url(../media/svg/wave_bg_2.svg);
+}
+
+#header_card3{
+  background-image: url(../media/svg/wave_bg_3.svg);
+}
+
+.header_cardHeading{
+  color: var(--milk);
+  font-family: var(--font-Popppins_SemiBold);
+  font-size: 20px;
+  text-align: center;
+}
+
+.header_cardContent{
+  color: var(--milk);
+  font-family: var(--font-Popppins_SemiBold);
+  font-size: 15px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+section#console{
+  width: 100vw;
+  height: 100vh;
+  background: var(--background-gradiant-console-section);
+}
+
+#consoleTable_dv{
+  width: 80%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-gap: 10px;
+}
+
+#consoleTable_headingDv{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px;
+  grid-gap: 10px;
+}
+
+.tableHeadingDv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.tableHeading_label{
+  color: var(--milk);
+  font-size: 20px;
+  font-family: var(--font-Popppins_SemiBold);
+}
+
+.tableHeading_labelVal{
+  color: var(--dark);
+  font-size: 15px;
+  font-family: var(--font-Popppins);
+  margin-top: 6px;
+}
+
+#consoleTable_contentDv{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+}
+
+.contentDv{
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.contentDv_border{
+  border: 1px solid #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.resourcesContentDv{
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  outline: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2px 0px;
+}
+
+.resourcesContentDv:hover,
+.active{
+  background: var(--background-gradiant-resource);
+}
+
+.resourceMethodDv{
+  width: auto;
+  height: 26px;
+  border-radius: 5px;
+  background-color: var(--method-backgroundColor);
+  padding: 5px 8px;
+  margin-left: 16px;
+}
+
+.resourceMethodLabel{
+  color: var(--milk);
+  font-family: var(--font-Popppins);
+  font-size: 14px;
+}
+
+.resourceLabel{
+  color: var(--milk);
+  font-family: var(--font-Popppins_SemiBold);
+  font-size: 16px;
+  margin-right: 16px;
+}
