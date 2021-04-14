@@ -2,44 +2,53 @@ module.exports = {
   "resources": [
     {
       "method": "GET",
-      "resourceName": "List Users" 
+      "list" : [
+        {
+          "method": "GET",
+          "resourceName": "List Users" 
+        },
+        {
+          "method": "GET",
+          "resourceName": "List Products" 
+        },
+        {
+          "method": "GET",
+          "resourceName": "List Todos" 
+        },
+        {
+          "method": "GET",
+          "resourceName": "List Comments"
+        },
+        {
+          "method": "GET",
+          "resourceName": "List Posts" 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single User" 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Product" 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Comment" 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Post" 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Todo" 
+        }
+      ]
     },
     {
-      "method": "GET",
-      "resourceName": "List Products" 
-    },
-    {
-      "method": "GET",
-      "resourceName": "List Todos" 
-    },
-    {
-      "method": "GET",
-      "resourceName": "List Comments"
-    },
-    {
-      "method": "GET",
-      "resourceName": "List Posts" 
-    },
-    {
-      "method": "GET",
-      "resourceName": "Single User" 
-    },
-    {
-      "method": "GET",
-      "resourceName": "Single Product" 
-    },
-    {
-      "method": "GET",
-      "resourceName": "Single Comment" 
-    },
-    {
-      "method": "GET",
-      "resourceName": "Single Post" 
-    },
-    {
-      "method": "GET",
-      "resourceName": "Single Todo" 
-    },
+      "method": "POST",
+      "list": []
+    }
   ],
   "users": [
     {
