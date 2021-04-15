@@ -63,21 +63,31 @@ document.addEventListener('click', (event) => {
 
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
+      
       if (this.readyState == 4) {
-        let __statusCode = this.status;
         let statusCode_Element = document.querySelector('#labelResponse_Value');
+        let responseBody_Element = document.querySelector('#responseBody_tag');
+        statusCode_Element.textContent = '';
+        responseBody_Element.textContent = '';
+
+        let __statusCode = this.status;
         
         if(__statusCode >= 200 && __statusCode <= 300){
           statusCode_Element.classList.add('darkGreen');
+          statusCode_Element.classList.remove('darkOrange');
+          statusCode_Element.classList.remove('darkRed');
         }else if(__statusCode >= 300 && __statusCode <= 400){
           statusCode_Element.classList.add('darkOrange');
+          statusCode_Element.classList.remove('darkGreen');
+          statusCode_Element.classList.remove('darkRed');
         }else{
           statusCode_Element.classList.add('darkRed');
+          statusCode_Element.classList.remove('darkGreen');
+          statusCode_Element.classList.remove('darkOrange');
         }
         statusCode_Element.textContent = __statusCode;
         
         let __resp = JSON.parse(this.response);
-        let responseBody_Element = document.querySelector('#responseBody_tag');
         responseBody_Element.textContent = JSON.stringify(__resp, undefined, 2);
       }
     }
