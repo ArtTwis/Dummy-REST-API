@@ -13,6 +13,12 @@ app.listen(port, function() {
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+/*
+==========================
+======= GET Method =======
+==========================
+*/
+
 app.get('/api/resources', (req, res) => {
   res.status(200).json({data: assets.resources});
 });
@@ -213,6 +219,98 @@ app.get('/api/resources/posts/:post', (req, res) => {
   }
   
 });
+
+/*
+==========================
+======= POST Method =======
+==========================
+*/
+
+app.post('/api/resources/create/user', (req, res) => {
+  let code = req.body;
+  let date = new Date();
+  let today = new Date();
+  let str = today.toGMTString();
+
+  return res.status(201).json({
+    ...code,
+    "status": "success",
+    "message": "User created successfully",
+    "createdAt": str
+  })
+});
+
+app.post('/api/resources/register/user', (req, res) => {
+  let code = req.body;
+
+  let date = new Date();
+  let today = new Date();
+  let str = today.toGMTString();
+
+  let id = Math.floor(Math.random() * 99);
+  let tokenId = Math.floor(Math.random() * 9999) + "REST" + Math.floor(Math.random() * 9999) + "API";
+
+  if(code.password){
+    return res.status(201).json({
+      "id": id,
+      "tokenId": tokenId,
+      "status": "success",
+      "message": "User register successfully",
+      "registerAt": str
+    })
+  }else{
+    return res.status(404).json({
+      "status": "failure",
+      "message": "Missing password"
+    })
+  }
+});
+
+app.post('/api/resources/login/user', (req, res) => {
+  let code = req.body;
+
+  let date = new Date();
+  let today = new Date();
+  let str = today.toGMTString();
+
+  let id = Math.floor(Math.random() * 99);
+  let tokenId = Math.floor(Math.random() * 9999) + "REST" + Math.floor(Math.random() * 9999) + "API";
+
+  if(code.password){
+    return res.status(201).json({
+      "id": id,
+      "tokenId": tokenId,
+      "status": "success",
+      "message": "User login successfully",
+      "loginAt": str
+    })
+  }else{
+    return res.status(404).json({
+      "status": "failure",
+      "message": "Missing password"
+    })
+  }
+});
+
+app.post('/api/resources/create/todo', (req, res) => {
+  let code = req.body;
+  let date = new Date();
+  let today = new Date();
+  let str = today.toGMTString();
+
+  return res.status(201).json({
+    ...code,
+    "status": "success",
+    "message": "Todo created successfully",
+    "createdAt": str
+  })
+});
+
+/*
+==========================
+======= Functions ========
+==========================
+*/
 
 function setUserContent(user, index){
   let mailingServices = ["gmail", "yahoo", "outlook", "hotmail", "onetesthub"];

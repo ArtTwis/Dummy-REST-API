@@ -112,7 +112,72 @@ module.exports = {
     },
     {
       "method": "POST",
-      "list": []
+      "list": [
+        {
+          "id": "createUser",
+          "method": "POST",
+          "resourceName": "Create - USER",
+          "endPoint": "/api/resources/create/user",
+          "body": {
+            "name": "Pankaj Aggarwal",
+            "job": "Team Leader"
+          },
+          "headers": []
+        },
+        {
+          "id": "registerSuccessfull",
+          "method": "POST",
+          "resourceName": "Register - SUCCESSFULL",
+          "endPoint": "/api/resources/register/user",
+          "body": {
+            "email": "pankaj.aggarwal@hotmail.com",
+            "password": "pistol"
+          },
+          "headers": []
+        },
+        {
+          "id": "registerUnsuccessfull",
+          "method": "POST",
+          "resourceName": "Register - UNSUCCESSFULL",
+          "endPoint": "/api/resources/register/user",
+          "body": {
+            "email": "pankaj.aggarwal@hotmail.com"
+          },
+          "headers": []
+        },
+        {
+          "id": "loginSuccessfull",
+          "method": "POST",
+          "resourceName": "Login - SUCCESSFULL",
+          "endPoint": "/api/resources/login/user",
+          "body": {
+            "email": "pankaj.aggarwal@hotmail.com.in",
+            "password": "pistol"
+          },
+          "headers": []
+        },
+        {
+          "id": "loginUnsuccessfull",
+          "method": "POST",
+          "resourceName": "Login - UNSUCCESSFULL",
+          "endPoint": "/api/resources/login/user",
+          "body": {
+            "email": "pankaj.aggarwal@hotmail.com.in"
+          },
+          "headers": []
+        },
+        {
+          "id": "createTodo",
+          "method": "POST",
+          "resourceName": "Create - TODO",
+          "endPoint": "/api/resources/create/todo",
+          "body": {
+            "title": "Bring birthday cake for ❤️sweetheart❤️",
+            "isCompleted": "false"
+          },
+          "headers": []
+        },
+      ]
     },
     {
       "method": "PUT",
