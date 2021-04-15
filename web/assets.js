@@ -40,15 +40,29 @@ module.exports = {
         },
         {
           "method": "GET",
-          "resourceName": "Single User",
-          "endPoint": "/api/resources/users",
+          "resourceName": "Single User &#8249Query&#8250",
+          "endPoint": "/api/resources/users?user=2",
           "body": "",
           "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "Single Product",
-          "endPoint": "/api/resources/users",
+          "resourceName": "Single User &#8249Param&#8250",
+          "endPoint": "/api/resources/users/2",
+          "body": "",
+          "headers": []
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Product &#8249Query&#8250",
+          "endPoint": "/api/resources/products?product=2",
+          "body": "",
+          "headers": [] 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Product &#8249Param&#8250",
+          "endPoint": "/api/resources/products/2",
           "body": "",
           "headers": [] 
         },

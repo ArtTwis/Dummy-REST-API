@@ -4,6 +4,7 @@ const port = process.env.PORT || 1818;
 let bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const assets = require('./assets');
+const { users } = require('./assets');
 
 app.listen(port, function() {
   console.log('server listening on port ' + port);
@@ -17,11 +18,39 @@ app.get('/api/resources', (req, res) => {
 });
 
 app.get('/api/resources/users', (req, res) => {
+  let userCode = req.query.user;
   let Users = [];
-  (assets.users).forEach((user, index) => {
-    Users.push(setUserContent(user, index));
-  });
-  res.status(200).json({"total_users": Users.length, data: Users})
+  if(userCode){
+    userCode = Number(userCode);
+    (assets.users).forEach((user, index) => {
+      if(index == userCode) Users.push(setUserContent(user, index));
+    });
+  }else{
+    (assets.users).forEach((user, index) => {
+      Users.push(setUserContent(user, index));
+    });
+  }
+  if(Users.length > 0)
+    res.status(200).json({"total_users": Users.length, data: Users})
+  else
+    res.status(404).json({"total_users": 0, data: []})
+});
+
+app.get('/api/resources/users/:user', (req, res) => {
+  let userCode = req.params.user;
+  let Users = [];
+  if(userCode){
+    userCode = Number(userCode);
+    (assets.users).forEach((user, index) => {
+      if(index == userCode) Users.push(setUserContent(user, index));
+    });
+    if(Users.length > 0)
+      res.status(200).json({"total_users": Users.length, data: Users})
+    else
+      res.status(404).json({"total_users": 0, data: []})
+  }else{
+    res.status(404).json({"total_users": 0, data: []})
+  }
 });
 
 app.get('/api/resources/todos', (req, res) => {
@@ -49,11 +78,43 @@ app.get('/api/resources/posts', (req, res) => {
 });
 
 app.get('/api/resources/products', (req, res) => {
+  let productCode = req.query.product;
   let Products = [];
-  (assets.products).forEach((product, index) => {
-    Products.push(setProductsContent(product, index));
-  });
-  res.status(200).json({"total_products": Products.length, data: Products})
+
+  if(productCode){
+    productCode = Number(productCode);
+    (assets.products).forEach((product, index) => {
+      if(index == productCode) Products.push(setProductsContent(product, index));
+    });
+  }else{
+    (assets.products).forEach((product, index) => {
+      Products.push(setProductsContent(product, index));
+    });
+  }
+
+  if(Products.length > 0)
+    res.status(200).json({"total_products": Products.length, data: Products});
+  else
+    res.status(404).json({"total_products": 0, data: []})
+});
+
+app.get('/api/resources/products/:product', (req, res) => {
+  let productCode = req.params.product;
+  let Products = [];
+  if(productCode){
+    productCode = Number(productCode);
+    
+    (assets.products).forEach((product, index) => {
+      if(index == productCode) Products.push(setProductsContent(product, index));
+    });
+
+    if(Products.length > 0)
+      res.status(200).json({"total_products": Products.length, data: Products})
+    else
+      res.status(404).json({"total_products": 0, data: []})
+  }else{
+    res.status(404).json({"total_products": 0, data: []})
+  }
 });
 
 function setUserContent(user, index){
@@ -67,13 +128,13 @@ function setUserContent(user, index){
   temp["age"] = Math.floor(Math.random() * 99);
   temp["city"] = cities[Math.floor(Math.random() * cities.length)];
   temp["email"] = fullname + "@" + mailingServices[Math.floor(Math.random() * mailingServices.length)] + ".com";
-  return {"id": index + 1, "name": user.name, "sex": user.sex, ...temp, "avatar": user.avatar};
+  return {"id": index, "name": user.name, "sex": user.sex, ...temp, "avatar": user.avatar};
 }
 
 function setTodoContent(todo, index){
   let boolValues = ["true", "false"];
   todo["isCompleted"] = boolValues[Math.floor(Math.random() * boolValues.length)]
-  return {"id": index + 1, ...todo}
+  return {"id": index, ...todo}
 }
 
 function setCommentsContent(comment, index){
@@ -81,13 +142,13 @@ function setCommentsContent(comment, index){
   let fullname = ((comment.name).replace(' ', '.')).toLowerCase();
   let emailId = fullname + "@" + mailingServices[Math.floor(Math.random() * mailingServices.length)] + ".com";
 
-  return {"postId": "11141XXX786", "id": index + 1, "name": comment.name, "sex": comment.sex, "email": emailId, "body": comment.body};
+  return {"postId": "11141XXX786", "id": index, "name": comment.name, "sex": comment.sex, "email": emailId, "body": comment.body};
 }
 
 function setPostsContent(post, index){
-  return {"userId": "1412XXX786", "id": index + 1, ...post};
+  return {"userId": "1412XXX786", "id": index, ...post};
 }
 
 function setProductsContent(product, index){
-  return {"productId": index + 1, ...product};
+  return {"productId": index, ...product};
 }
