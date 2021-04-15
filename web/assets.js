@@ -5,43 +5,73 @@ module.exports = {
       "list" : [
         {
           "method": "GET",
-          "resourceName": "List Users" 
+          "resourceName": "List All Users",
+          "endPoint": "/api/resources/users",
+          "body": "",
+          "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "List Products" 
+          "resourceName": "List All Products",
+          "endPoint": "/api/resources/products",
+          "body": "",
+          "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "List Todos" 
+          "resourceName": "List All Todos",
+          "endPoint": "/api/resources/todos",
+          "body": "",
+          "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "List Comments"
+          "resourceName": "List All Comments",
+          "endPoint": "/api/resources/comments",
+          "body": "",
+          "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "List Posts" 
+          "resourceName": "List All Posts",
+          "endPoint": "/api/resources/posts",
+          "body": "",
+          "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "Single User" 
+          "resourceName": "Single User",
+          "endPoint": "/api/resources/users",
+          "body": "",
+          "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "Single Product" 
+          "resourceName": "Single Product",
+          "endPoint": "/api/resources/users",
+          "body": "",
+          "headers": [] 
         },
         {
           "method": "GET",
-          "resourceName": "Single Comment" 
+          "resourceName": "Single Comment",
+          "endPoint": "/api/resources/users",
+          "body": "",
+          "headers": [] 
         },
         {
           "method": "GET",
-          "resourceName": "Single Post" 
+          "resourceName": "Single Post",
+          "endPoint": "/api/resources/users",
+          "body": "",
+          "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "Single Todo" 
+          "resourceName": "Single Todo",
+          "endPoint": "/api/resources/users",
+          "body": "",
+          "headers": [] 
         }
       ]
     },
@@ -54,7 +84,7 @@ module.exports = {
       "list": []
     },
     {
-      "method": "Delete",
+      "method": "DELETE",
       "list": []
     },
     {
