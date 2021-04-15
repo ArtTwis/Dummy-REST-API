@@ -56,6 +56,11 @@
   color: red;
 }
 
+.randomElement {
+  position: absolute;
+  left: -9999px;
+}
+
 pre {
   overflow-x: auto;
   white-space: pre-wrap;
@@ -199,6 +204,7 @@ section#console{
 
 #labelRequest_Value{
  color: var(--resourceColor);
+ cursor: pointer;
 }
 
 .tableHeading_labelVal{

@@ -1,0 +1,48 @@
+#messageBox{
+  position: absolute;
+  top: calc(100vh + 20px);
+  left: 10px;
+  height: 50px;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.75);
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 5px;
+  border-style: solid;
+  border-color: var(--primary-color);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  visibility: hidden;
+  z-index: 2;
+}
+
+#messageBox_contentDv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+#messageBox_heading{
+  font-family: var(--font-Poppins_SemiBold);
+  font-size: 16px;
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+#messageBox_message{
+  font-family: var(--font-Popppins);
+  font-size: 10px;
+  color: var(--dark);
+  margin-left: 10px;
+}
+
+#messageBox_closeBtn{
+  width: 20px;
+  height: 20px;
+}
