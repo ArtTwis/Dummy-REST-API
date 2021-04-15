@@ -62,14 +62,15 @@
 }
 
 pre {
+  padding: 12px;
+  background-color: var(--preTag-backgroundColor) !important; 
   overflow-x: auto;
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
-  user-select: text;
-  -webkit-user-select: text;
+  cursor: pointer;
  }
 
 section#header{
@@ -221,11 +222,9 @@ section#console{
 }
 
 .contentDv{
-  padding: 12px;
+  font-size: 12px !important;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  font-family: var(--font-Popppins_SemiBold) !important;
-  font-size: 12px !important;
   color: var(--preTag-Color) !important;
 }
 
@@ -235,9 +234,12 @@ section#console{
   box-sizing: border-box;
 }
 
+#requestBody_tag{
+  font-family: var(--font-Popppins_SemiBold) !important;
+}
+
 #responseBody_tag{
- font-family: var(--font-Poppins_SemiBoldItalic) !important;
- background-color: var(--preTag-backgroundColor);
+  font-family: var(--font-Poppins_SemiBoldItalic) !important;
 }
 
 .resourcesMethodDv{
@@ -301,6 +303,6 @@ section#console{
 .resourceLabel{
   color: var(--dark);
   font-family: var(--font-Popppins_SemiBold);
-  font-size: 16px;
+  font-size: 14px;
   margin-right: 16px;
 }
