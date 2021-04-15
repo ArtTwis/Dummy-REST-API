@@ -56,6 +56,7 @@ document.addEventListener('click', (event) => {
     let endpoint = event.target.getAttribute('data-endpoint');
     let resourceName = event.target.getAttribute('data-resourcename');
     document.querySelector('#labelRequest_Value').textContent = endpoint;
+    document.querySelector('#labelRequest_Value').setAttribute('data-url', apiendpoint + endpoint);
 
     // TODO: if request body/headers than show in request_contentDv work pending .....
     document.querySelector('#request_contentDv').innerHTML = ``;
@@ -82,6 +83,21 @@ document.addEventListener('click', (event) => {
     }
     xhr.open(`${method}`, `${apiendpoint}${endpoint}`, true);
     xhr.send();
+  }
+
+  if(event.target.id == "labelRequest_Value"){
+    let url = document.querySelector('#labelRequest_Value').getAttribute('data-url');
+    const randomElement = document.createElement('textarea');
+    randomElement.classList.add('randomElement');
+    randomElement.textContent = url;
+    document.body.appendChild(randomElement);
+    randomElement.select();
+    document.execCommand('copy');
+    document.body.removeChild(randomElement);
+    document.querySelector('#messageBox').style.visibility = "visible";
+    setTimeout(() => {
+      document.querySelector('#messageBox').style.visibility = "hidden"; 
+    }, 2000);
   }
 });
 
