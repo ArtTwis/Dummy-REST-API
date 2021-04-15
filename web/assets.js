@@ -68,24 +68,45 @@ module.exports = {
         },
         {
           "method": "GET",
-          "resourceName": "Single Comment",
-          "endPoint": "/api/resources/users",
+          "resourceName": "Single Todo &#8249Query&#8250",
+          "endPoint": "/api/resources/todos?todo=6",
           "body": "",
           "headers": [] 
         },
         {
           "method": "GET",
-          "resourceName": "Single Post",
-          "endPoint": "/api/resources/users",
+          "resourceName": "Single Todo &#8249Param&#8250",
+          "endPoint": "/api/resources/todos/6",
+          "body": "",
+          "headers": [] 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Comment &#8249Query&#8250",
+          "endPoint": "/api/resources/comments?comment=4",
+          "body": "",
+          "headers": [] 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Comment &#8249Param&#8250",
+          "endPoint": "/api/resources/comments/4",
+          "body": "",
+          "headers": [] 
+        },
+        {
+          "method": "GET",
+          "resourceName": "Single Post &#8249Query&#8250",
+          "endPoint": "/api/resources/posts?post=8",
           "body": "",
           "headers": []
         },
         {
           "method": "GET",
-          "resourceName": "Single Todo",
-          "endPoint": "/api/resources/users",
+          "resourceName": "Single Post &#8249Param&#8250",
+          "endPoint": "/api/resources/posts/8",
           "body": "",
-          "headers": [] 
+          "headers": []
         }
       ]
     },

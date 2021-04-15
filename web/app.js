@@ -53,30 +53,6 @@ app.get('/api/resources/users/:user', (req, res) => {
   }
 });
 
-app.get('/api/resources/todos', (req, res) => {
-  let todosList = [];
-  (assets.todos).forEach((todo, index) => {
-    todosList.push(setTodoContent(todo, index));
-  });
-  res.status(200).json({"total_todos": todosList.length, data: todosList})
-});
-
-app.get('/api/resources/comments', (req, res) => {
-  let Comments = [];
-  (assets.comments).forEach((comment, index) => {
-    Comments.push(setCommentsContent(comment, index));
-  });
-  res.status(200).json({"total_comments": Comments.length, data: Comments})
-});
-
-app.get('/api/resources/posts', (req, res) => {
-  let Posts = [];
-  (assets.posts).forEach((post, index) => {
-    Posts.push(setPostsContent(post, index));
-  });
-  res.status(200).json({"total_posts": Posts.length, data: Posts})
-});
-
 app.get('/api/resources/products', (req, res) => {
   let productCode = req.query.product;
   let Products = [];
@@ -115,6 +91,127 @@ app.get('/api/resources/products/:product', (req, res) => {
   }else{
     res.status(404).json({"total_products": 0, data: []})
   }
+});
+
+app.get('/api/resources/todos', (req, res) => {
+  let todoCode = req.query.todo;
+  let todosList = [];
+
+  if(todoCode){
+    (assets.todos).forEach((todo, index) => {
+      if(index == todoCode) todosList.push(setTodoContent(todo, index));
+    });
+  }else{
+    (assets.todos).forEach((todo, index) => {
+      todosList.push(setTodoContent(todo, index));
+    });
+  }
+
+  if(todosList.length > 0)
+    res.status(200).json({"total_todos": todosList.length, data: todosList});
+  else
+    res.status(404).json({"total_todos": 0, data: []})
+});
+
+app.get('/api/resources/todos/:todo', (req, res) => {
+  let todoCode = req.params.todo;
+  let todosList = [];
+
+  if(todoCode){
+    todoCode = Number(todoCode);
+    
+    (assets.todos).forEach((todo, index) => {
+      if(index == todoCode) todosList.push(setTodoContent(todo, index));
+    });
+
+    if(todosList.length > 0)
+      res.status(200).json({"total_todos": todosList.length, data: todosList})
+    else
+      res.status(404).json({"total_todos": 0, data: []})
+  }else{
+    res.status(404).json({"total_todos": 0, data: []})
+  }
+});
+
+app.get('/api/resources/comments', (req, res) => {
+  let commentCode = req.query.comment;
+  let Comments = [];
+
+  if(commentCode){
+    (assets.comments).forEach((comment, index) => {
+      if(index == commentCode) Comments.push(setCommentsContent(comment, index));
+    });
+  }else{
+    (assets.comments).forEach((comment, index) => {
+      Comments.push(setCommentsContent(comment, index));
+    });
+  }
+
+  if(Comments.length > 0)
+    res.status(200).json({"total_comments": Comments.length, data: Comments});
+  else
+    res.status(404).json({"total_comments": 0, data: []})
+});
+
+app.get('/api/resources/comments/:comment', (req, res) => {
+  let commentCode = req.params.comment;
+  let Comments = [];
+
+  if(commentCode){
+    commentCode = Number(commentCode);
+
+    (assets.comments).forEach((comment, index) => {
+      if(index == commentCode) Comments.push(setCommentsContent(comment, index));
+    });
+
+    if(Comments.length > 0)
+      res.status(200).json({"total_comments": Comments.length, data: Comments})
+    else
+      res.status(404).json({"total_comments": 0, data: []})
+  }else{
+    res.status(404).json({"total_comments": 0, data: []})
+  }
+});
+
+app.get('/api/resources/posts', (req, res) => {
+  let postCode = req.query.post;
+  let Posts = [];
+
+  if(postCode){
+    (assets.posts).forEach((post, index) => {
+      if(index == postCode) Posts.push(setPostsContent(post, index));
+    });
+  }else{
+    (assets.posts).forEach((post, index) => {
+      Posts.push(setPostsContent(post, index));
+    });
+  }
+
+  if(Posts.length > 0)
+    res.status(200).json({"total_posts": Posts.length, data: Posts})
+  else
+    res.status(404).json({"total_posts": 0, data: []})
+});
+
+app.get('/api/resources/posts/:post', (req, res) => {
+  let postCode = req.params.post;
+  let Posts = [];
+
+  if(postCode){
+    postCode = Number(postCode);
+
+    (assets.posts).forEach((post, index) => {
+      if(index == postCode) Posts.push(setPostsContent(post, index));
+    });
+
+    if(Posts.length > 0)
+      res.status(200).json({"total_posts": Posts.length, data: Posts})
+    else
+      res.status(404).json({"total_posts": 0, data: []})
+  }else{
+    res.status(404).json({"total_posts": 0, data: []})
+  }
+  
 });
 
 function setUserContent(user, index){
