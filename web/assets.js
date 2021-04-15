@@ -95,63 +95,83 @@ module.exports = {
   "users": [
     {
       "name": "Twinkle Goyal",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1Xz7CLOIUM3mdi-VQNau1MlgbXcFNsjv7/view?usp=sharing"
     },
     {
       "name": "Shivam Singla",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1L6SV5AkA0-1Ex6NO4WUD1YXq-RFMcxIm/view?usp=sharing"
     },
     {
       "name": "Chanchal Goyal",
-      "sex": "Female"
+      "sex": "Female",
+      "avatar": "https://drive.google.com/file/d/1U6P36IvOx6SQQDkU_OxE1wkH6qZ4mJ9W/view?usp=sharing"
+    },
+    {
+      "name": "Naveen Bansal",
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1Ff8Lo_5Xuf6apbLlZtB1kDjLmF8Fh0dW/view?usp=sharing"
     },
     {
       "name": "Karan Aggarwal",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1FOdQs9KHvcX9whT2eOzOFmuLZ6uj7PP8/view?usp=sharing"
     },
     {
       "name": "Gagan Bansal",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/13IymYTWiFfya5XUlLNmmXIl_E-e7WSwZ/view?usp=sharing"
     },
     {
       "name": "Nimrat Kaur",
-      "sex": "Female"
+      "sex": "Female",
+      "avatar": "https://drive.google.com/file/d/1unTB1WkQq4w8DTjGXjC2YWNMBC-OW7GX/view?usp=sharing"
     },
     {
       "name": "Sandeep Bansal",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1ULEqdOmumPNr7Mn6raRNdNPZMbPSzMWj/view?usp=sharing"
     },
     {
       "name": "Sandeep Goyal",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1CdXwriaB9SzAGzG4GNpLOtT7lbl8mFFw/view?usp=sharing"
     },
     {
       "name": "Shiwani Arora",
-      "sex": "Female"
+      "sex": "Female",
+      "avatar": "https://drive.google.com/file/d/1bogkjShxbEUjbScfGAgUyjPUEqmCbIZc/view?usp=sharing"
     },
     {
       "name": "Prince Bansal",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1htBgARM4OX_vrzqW72oKGmR6KLAWu031/view?usp=sharing"
     },
     {
       "name": "Nitin Goyal",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1AYWLOEzGa7Wa5sHdoioaMEkW2RizcNML/view?usp=sharing"
     },
     {
       "name": "Shruti Jain",
-      "sex": "Female"
+      "sex": "Female",
+      "avatar": "https://drive.google.com/file/d/1pMnvBb9TOcssOm2k5tAf50FENQSPkSvM/view?usp=sharing"
     },
     {
       "name": "Vasu Singla",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1QMAMgGsloh8IqzmMMAJPP6MfdsTiBOdG/view?usp=sharing"
     },
     {
       "name": "Nancy Gupta",
-      "sex": "Female"
+      "sex": "Female",
+      "avatar": "https://drive.google.com/file/d/1F9sc62YZ-3MMBfupVDhxLapnFvSFy3u7/view?usp=sharing"
     },
     {
       "name": "Yatin Singla",
-      "sex": "Male"
+      "sex": "Male",
+      "avatar": "https://drive.google.com/file/d/1rujTV2iLToyAYeTg9vpHSip0PvAi8FK5/view?usp=sharing"
     },
   ],
   "todos": [

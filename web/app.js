@@ -61,11 +61,13 @@ function setUserContent(user, index){
   let cities = ["Sangaria", "Hanumangarh", "Bathinda", "Delhi", "Kolkata", "Bangalore", "Chennai", "Mysore", "Dharamshala", "Shimla", "Jaipur", "Jodhpur", "Kashmir", "Jammu", "Ladakh", "Leh", "Manali"];
 
   let fullname = ((user.name).replace(' ', '.')).toLowerCase();
-  user["mobile"] = "+91-" + "94144" + Math.floor(Math.random() * 99) + "XXX";
-  user["age"] = Math.floor(Math.random() * 99);
-  user["city"] = cities[Math.floor(Math.random() * cities.length)];
-  user["email"] = fullname + "@" + mailingServices[Math.floor(Math.random() * mailingServices.length)] + ".com";
-  return {"id": index + 1, ...user};
+
+  let temp = {};
+  temp["mobile"] = "+91-" + "94144" + Math.floor(Math.random() * 99) + "XXX";
+  temp["age"] = Math.floor(Math.random() * 99);
+  temp["city"] = cities[Math.floor(Math.random() * cities.length)];
+  temp["email"] = fullname + "@" + mailingServices[Math.floor(Math.random() * mailingServices.length)] + ".com";
+  return {"id": index + 1, "name": user.name, "sex": user.sex, ...temp, "avatar": user.avatar};
 }
 
 function setTodoContent(todo, index){
