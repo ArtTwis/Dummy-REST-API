@@ -181,15 +181,129 @@ module.exports = {
     },
     {
       "method": "PUT",
-      "list": []
+      "list": [
+        {
+          "id": "updateUserQuery",
+          "method": "PUT",
+          "resourceName": "Update - USER &#8249Query&#8250",
+          "endPoint": "/api/resources/update/users?user=2",
+          "body": {
+            "name": "Art Twis",
+            "job": "Software Developer"
+          },
+          "headers": []
+        },
+        {
+          "id": "updateUserParam",
+          "method": "PUT",
+          "resourceName": "Update - USER &#8249Param&#8250",
+          "endPoint": "/api/resources/update/users/2",
+          "body": {
+            "name": "Art Twis",
+            "job": "Python Developer"
+          },
+          "headers": []
+        },
+        {
+          "id": "updateTodoQuery",
+          "method": "PUT",
+          "resourceName": "Update - TODO &#8249Query&#8250",
+          "endPoint": "/api/resources/update/Todos?todo=3",
+          "body": {
+            "title": "Complete Today's Assignment and help other team members also.",
+            "isCompleted": "false"
+          },
+          "headers": []
+        },
+        {
+          "id": "updateTodoParam",
+          "method": "PUT",
+          "resourceName": "Update - TODO &#8249Param&#8250",
+          "endPoint": "/api/resources/update/todos/3",
+          "body": {
+            "title": "Decorate home and bring some party stuff from market.",
+            "isCompleted": "true"
+          },
+          "headers": []
+        },
+      ]
     },
     {
       "method": "DELETE",
-      "list": []
+      "list": [
+        {
+          "method": "DELETE",
+          "resourceName": "Delete - USER &#8249Query&#8250",
+          "endPoint": "/api/resources/delete/users?user=2",
+          "body": "",
+          "headers": []
+        },
+        {
+          "method": "DELETE",
+          "resourceName": "Delete - USER &#8249Param&#8250",
+          "endPoint": "/api/resources/delete/users/2",
+          "body": "",
+          "headers": []
+        },
+        {
+          "method": "DELETE",
+          "resourceName": "Delete - Todo &#8249Param&#8250",
+          "endPoint": "/api/resources/delete/todos/2",
+          "body": "",
+          "headers": []
+        },
+        {
+          "method": "DELETE",
+          "resourceName": "Delete - Post &#8249Param&#8250",
+          "endPoint": "/api/resources/delete/posts/2",
+          "body": "",
+          "headers": []
+        },
+        {
+          "method": "DELETE",
+          "resourceName": "Delete - Todo &#8249Comment&#8250",
+          "endPoint": "/api/resources/delete/comments/2",
+          "body": "",
+          "headers": []
+        },
+      ]
     },
     {
       "method": "PATCH",
-      "list": []
+      "list": [
+        {
+          "id": "updateUserPatch",
+          "method": "PATCH",
+          "resourceName": "Update - USER",
+          "endPoint": "/api/resources/update/users/2",
+          "body": {
+            "name": "Art Twis",
+            "job": "Java Developer"
+          },
+          "headers": []
+        },
+        {
+          "id": "updateTodoPatch",
+          "method": "PATCH",
+          "resourceName": "Update - TODO",
+          "endPoint": "/api/resources/update/todos/4",
+          "body": {
+            "title": "Buy airpods for indian friends",
+            "isCompleted": "true"
+          },
+          "headers": []
+        },
+        {
+          "id": "updateCommentPatch",
+          "method": "PATCH",
+          "resourceName": "Update - Comment",
+          "endPoint": "/api/resources/update/comments/6",
+          "body": {
+            "body": "Respond to the comments you get"
+          },
+          "headers": []
+        },
+      ]
     },
   ],
   "users": [

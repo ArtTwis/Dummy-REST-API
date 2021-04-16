@@ -222,13 +222,13 @@ app.get('/api/resources/posts/:post', (req, res) => {
 
 /*
 ==========================
-======= POST Method =======
+======= POST Method ======
 ==========================
 */
 
 app.post('/api/resources/create/user', (req, res) => {
   let code = req.body;
-  let date = new Date();
+  
   let today = new Date();
   let str = today.toGMTString();
 
@@ -243,7 +243,6 @@ app.post('/api/resources/create/user', (req, res) => {
 app.post('/api/resources/register/user', (req, res) => {
   let code = req.body;
 
-  let date = new Date();
   let today = new Date();
   let str = today.toGMTString();
 
@@ -269,7 +268,6 @@ app.post('/api/resources/register/user', (req, res) => {
 app.post('/api/resources/login/user', (req, res) => {
   let code = req.body;
 
-  let date = new Date();
   let today = new Date();
   let str = today.toGMTString();
 
@@ -294,7 +292,6 @@ app.post('/api/resources/login/user', (req, res) => {
 
 app.post('/api/resources/create/todo', (req, res) => {
   let code = req.body;
-  let date = new Date();
   let today = new Date();
   let str = today.toGMTString();
 
@@ -304,6 +301,192 @@ app.post('/api/resources/create/todo', (req, res) => {
     "message": "Todo created successfully",
     "createdAt": str
   })
+});
+
+/*
+==========================
+======= PUT Method =======
+==========================
+*/
+
+app.put('/api/resources/update/users', (req, res) => {
+  let userCode = req.query.user;
+  let body = req.body;
+
+  let today = new Date();
+  let str = today.toGMTString();
+
+  if(userCode && body){
+    return res.status(200).json({
+      "status": "success",
+      "userId": userCode,
+      ...body,
+      "updatedAt": str,
+    })
+  } 
+  return res.status(404).json({
+    "status": "error",
+    "message": "missing parameter"
+  });
+});
+
+app.put('/api/resources/update/users/:user', (req, res) => {
+  let userCode = req.params.user;
+  console.log("~ userCode :", userCode)
+  let body = req.body;
+
+  let today = new Date();
+  let str = today.toGMTString();
+
+  if(userCode && body){
+    return res.status(200).json({
+      "status": "success",
+      "userId": userCode,
+      ...body,
+      "updatedAt": str,
+    })
+  } 
+  return res.status(404).json({
+    "status": "error",
+    "message": "missing parameter"
+  });
+});
+
+app.put('/api/resources/update/todos', (req, res) => {
+  let todoCode = req.query.todo;
+  let body = req.body;
+
+  let today = new Date();
+  let str = today.toGMTString();
+
+  if(todoCode && body){
+    return res.status(200).json({
+      "status": "success",
+      "todoId": todoCode,
+      ...body,
+      "updatedAt": str,
+    })
+  } 
+  return res.status(404).json({
+    "status": "error",
+    "message": "missing parameter"
+  });
+});
+
+app.put('/api/resources/update/todos/:todo', (req, res) => {
+  let todoCode = req.params.todo;
+  let body = req.body;
+
+  let today = new Date();
+  let str = today.toGMTString();
+
+  if(todoCode && body){
+    return res.status(200).json({
+      "status": "success",
+      "todoId": todoCode,
+      ...body,
+      "updatedAt": str,
+    })
+  }
+  return res.status(404).json({
+    "status": "error",
+    "message": "missing parameter"
+  });
+});
+
+/*
+==========================
+===== Delete Method ======
+==========================
+*/
+
+app.delete('/api/resources/delete/users', (req, res) => {
+  let userCode = req.query.user;
+
+  let today = new Date();
+  let str = today.toGMTString();
+
+  if(userCode){
+    return res.status(200).json({
+      "status": "success",
+      "userId": userCode,
+      "deletedAt": str,
+    })
+  } 
+  return res.status(404).json({
+    "status": "error",
+    "message": "missing parameter"
+  });
+});
+
+app.delete('/api/resources/delete/:resource/:id', (req, res) => {
+  let resource = req.params.resource;
+  let id = req.params.id;
+
+  if(resource && id){
+    let today = new Date();
+    let str = today.toGMTString();
+
+    let resourceObj = {}
+    if(resource == "todos") {
+      resourceObj["todoId"] = id;
+    }else if(resource == "posts"){
+      resourceObj["postId"] = id;
+    }else if(resource == "users"){
+      resourceObj["userId"] = id;
+    }else if(resource == "comments"){
+      resourceObj["commentId"] = id;
+    }
+    let resObj = {
+      "status": "success",
+      ...resourceObj,
+      "deletedAt": str,
+    }
+
+    return res.status(200).json(resObj);
+  }
+  return res.status(404).json({
+    "status": "error",
+    "message": "missing parameter"
+  });
+});
+
+/*
+==========================
+===== Patch Method =======
+==========================
+*/
+
+app.patch('/api/resources/update/:resource/:id', (req, res) => {
+  let resource = req.params.resource;
+  let id = req.params.id;
+  let body = req.body;
+
+  if(resource && id){
+    let today = new Date();
+    let str = today.toGMTString();
+
+    let resourceObj = {}
+    if(resource == "todos") {
+      resourceObj["todoId"] = id;
+    }else if(resource == "users"){
+      resourceObj["userId"] = id;
+    }else if(resource == "comments"){
+      resourceObj["commentId"] = id;
+    }
+    let resObj = {
+      "status": "success",
+      ...resourceObj,
+      ...body,
+      "updatedAt": str,
+    }
+
+    return res.status(200).json(resObj);
+  }
+  return res.status(404).json({
+    "status": "error",
+    "message": "missing parameter"
+  });
 });
 
 /*
