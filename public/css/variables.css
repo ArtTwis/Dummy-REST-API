@@ -19,7 +19,7 @@
   --font-Poppins_SemiBoldItalic: Poppins_SemiBoldItalic;
 
   --background-gradiant-blue-pink: linear-gradient(to right, #fc466b, #3f5efb);
-  --background-gradiant-console-section: #FEE3FF;
+  --background-gradiant-console-section: #eeeeee;
   --background-gradiant-resource: linear-gradient(90deg, #a8a8a8b3 6%, #d4d4d466 19%, #ffffff4d 100%);
   --card-background-color: #321255c7;
   
@@ -29,6 +29,7 @@
   --method-backgroundColor: #350355;
   --border-Color: #c7c7c7;
   --resourceColor: #ec8501;
+  --resource-tab-backgroundColor: #e1e5f0;
   --preTag-backgroundColor: rgba(231, 213, 255, 0.15);
   --preTag-Color: #350355;
 }
