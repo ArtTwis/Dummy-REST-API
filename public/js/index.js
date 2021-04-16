@@ -18,6 +18,7 @@ const bodyObject = {};
       setContainerSize(resourceContainer);
       let __response = JSON.parse(this.response);
       if(__response){
+        let count = 0;
         for(let resource of __response.data){
           resourceContainer.innerHTML += `
           <div data-method="${resource.method}" class="resourceMethod resourcesMethodDv">
@@ -28,7 +29,7 @@ const bodyObject = {};
           (resource.list).forEach((__resource) => {
             if(__resource.id) bodyObject[__resource.id] = __resource.body;
             resourceContainer.innerHTML += `
-            <div data-id="${setIdAttribute(__resource)}" data-method="${__resource.method}" data-endpoint="${__resource.endPoint}" data-resourcename="${__resource.resourceName}" class="hide actual_resource resourcesContentParentDv flex justify-center align-center">
+            <div data-id="${setIdAttribute(__resource)}" data-method="${__resource.method}" data-endpoint="${__resource.endPoint}" data-resourcename="${__resource.resourceName}" class="${checkZero(count)} actual_resource resourcesContentParentDv flex justify-center align-center">
               <div data-id="${setIdAttribute(__resource)}" data-method="${__resource.method}" data-endpoint="${__resource.endPoint}" data-resourcename="${__resource.resourceName}" class="actual_resource  resourcesContentDv">
                 <div data-id="${setIdAttribute(__resource)}" data-method="${__resource.method}" data-endpoint="${__resource.endPoint}" data-resourcename="${__resource.resourceName}" class="actual_resource  resourceMethodDv flex justify-center align-center">
                   <label data-id="${setIdAttribute(__resource)}" data-method="${__resource.method}" data-endpoint="${__resource.endPoint}" data-resourcename="${__resource.resourceName}" class="actual_resource  resourceMethodLabel">${__resource.method}</label>
@@ -38,6 +39,8 @@ const bodyObject = {};
             </div>
             `;
           });
+          
+          count += 1;
         }
       }
     }
@@ -157,4 +160,8 @@ function setIdAttribute(__resp){
    return __resp.id;
   else
     return null;
+}
+
+function checkZero(count){
+  if(count>0) return "hide";
 }
