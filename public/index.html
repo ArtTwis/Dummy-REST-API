@@ -59,19 +59,28 @@
           <!-- <label id="labelResources_Value" class="tableHeading_labelVal"></label> -->
         </div>
         <div class="tableHeadingDv tableHeading_Border" id="requestHeading_dv">
+          <img id="requestBackgroundImg" src="./media/send.png">
           <label class="tableHeading_label">Request</label>
           <label id="labelRequest_Value" class="tableHeading_labelVal"></label>
         </div>
         <div class="tableHeadingDv tableHeading_Border" id="responseHeading_dv">
+          <img id="responseBackgroundImg" src="./media/send.png">
           <label class="tableHeading_label">Response</label>
           <label id="labelResponse_Value" class="tableHeading_labelVal"></label>
         </div>
       </div>
       <div id="consoleTable_contentDv">
-        <div class="contentDv" id="resources_contentDv"></div>
+        <div class="contentDv contentDv_border" id="resources_contentDv"></div>
         <pre class="contentDv contentDv_border hidden" id="requestBody_tag"></pre>
         <pre class="contentDv contentDv_border hidden" id="responseBody_tag"></pre>
       </div>
+    </div>
+  </section>
+
+  <section id="host" class="flex justify-center align-center">
+    <div id="hostContainer">
+      <div class="hostChild" id="hostTable_firstChild"></div>
+      <div class="hostChild" id="hostTable_secondChild"></div>
     </div>
   </section>
 
