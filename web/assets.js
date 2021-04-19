@@ -274,7 +274,7 @@ module.exports = {
         {
           "id": "updateUserPatch",
           "method": "PATCH",
-          "resourceName": "Update - USER",
+          "resourceName": "Update - USER &#8249Param&#8250",
           "endPoint": "/api/resources/update/users/2",
           "body": {
             "name": "Art Twis",
@@ -285,7 +285,7 @@ module.exports = {
         {
           "id": "updateTodoPatch",
           "method": "PATCH",
-          "resourceName": "Update - TODO",
+          "resourceName": "Update - TODO &#8249Param&#8250",
           "endPoint": "/api/resources/update/todos/4",
           "body": {
             "title": "Buy airpods for indian friends",
@@ -296,7 +296,7 @@ module.exports = {
         {
           "id": "updateCommentPatch",
           "method": "PATCH",
-          "resourceName": "Update - Comment",
+          "resourceName": "Update - Comment &#8249Param&#8250",
           "endPoint": "/api/resources/update/comments/6",
           "body": {
             "body": "Respond to the comments you get"
