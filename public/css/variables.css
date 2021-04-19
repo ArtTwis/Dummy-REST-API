@@ -13,10 +13,16 @@
   src: url(../font/Poppins-SemiBoldItalic.ttf);
 }
 
+@font-face{
+  font-family: Poppins_Thin;
+  src: url(../font/Poppins-Thin.ttf);
+}
+
 :root{
   --font-Popppins: Poppins;
+  --font-Popppins_Thin: Poppins_Thin;
   --font-Popppins_SemiBold: Poppins_SemiBold;
-  --font-Poppins_SemiBoldItalic: Poppins_SemiBoldItalic;
+  --font-Popppins_SemiBoldItalic: Poppins_SemiBoldItalic;
 
   --background-gradiant-blue-pink: linear-gradient(to right, #fc466b, #3f5efb);
   --background-gradiant-console-section: #eeeeee;
