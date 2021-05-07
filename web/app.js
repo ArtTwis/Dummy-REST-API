@@ -6,7 +6,9 @@ const jsonParser = bodyParser.json();
 const assets = require('./assets');
 const { users } = require('./assets');
 
-app.listen();
+app.listen(port, function () {
+	console.log('server is listening on port ' + port);
+});
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
