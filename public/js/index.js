@@ -1,4 +1,5 @@
-const apiendpoint = 'http://localhost:1818';
+// const apiendpoint = 'http://localhost:1818';
+const apiendpoint = 'https://restapicall.herokuapp.com';
 const bodyObject = {};
 
 (function () {
