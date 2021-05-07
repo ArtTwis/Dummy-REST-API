@@ -281,12 +281,9 @@ section#console {
 	border-radius: 10px;
 }
 
+#responseBody_tag,
 #requestBody_tag {
 	font-family: var(--font-Popppins_SemiBold) !important;
-}
-
-#responseBody_tag {
-	font-family: var(--font-Poppins_SemiBoldItalic) !important;
 }
 
 .resourcesMethodDv {
