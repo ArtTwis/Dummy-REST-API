@@ -50,17 +50,13 @@ const bodyObject = {};
 							__resource.method
 						}" data-endpoint="${__resource.endPoint}" data-resourcename="${
 							__resource.resourceName
-						}" class="actual_resource  resourceMethodLabel">${
-							__resource.method
-						}</label>
+						}" class="actual_resource  resourceMethodLabel">${__resource.method}</label>
                 </div>
                 <label data-id="${setIdAttribute(__resource)}" data-method="${
 							__resource.method
 						}" data-endpoint="${__resource.endPoint}" data-resourcename="${
 							__resource.resourceName
-						}" class="actual_resource  resourceLabel">${
-							__resource.resourceName
-						}</label>
+						}" class="actual_resource  resourceLabel">${__resource.resourceName}</label>
               </div>
             </div>
             `;
@@ -78,12 +74,9 @@ const bodyObject = {};
 document.addEventListener('click', (event) => {
 	if (event.target.classList.contains('resourceMethod')) {
 		let __method = event.target.getAttribute('data-method');
-		let resourceElements = document.querySelectorAll(
-			`.resourcesContentParentDv`
-		);
+		let resourceElements = document.querySelectorAll(`.resourcesContentParentDv`);
 		resourceElements.forEach((element) => {
-			if (element.getAttribute('data-method') == __method)
-				element.classList.toggle('hide');
+			if (element.getAttribute('data-method') == __method) element.classList.toggle('hide');
 			else element.classList.add('hide');
 		});
 	}
@@ -94,18 +87,12 @@ document.addEventListener('click', (event) => {
 		let resourceName = event.target.getAttribute('data-resourcename');
 		let id = event.target.getAttribute('data-id');
 		document.querySelector('#labelRequest_Value').textContent = endpoint;
-		document
-			.querySelector('#labelRequest_Value')
-			.setAttribute('data-url', apiendpoint + endpoint);
+		document.querySelector('#labelRequest_Value').setAttribute('data-url', apiendpoint + endpoint);
 
 		let requestBody_tag = document.querySelector('#requestBody_tag');
 		if (id != 'null') {
 			requestBody_tag.classList.remove('hidden');
-			requestBody_tag.textContent = JSON.stringify(
-				bodyObject[id],
-				undefined,
-				2
-			);
+			requestBody_tag.textContent = JSON.stringify(bodyObject[id], undefined, 2);
 		} else {
 			requestBody_tag.classList.add('hidden');
 			requestBody_tag.textContent = '';
@@ -172,10 +159,7 @@ function setContainerSize(element) {
 }
 
 function copyToClipboard(elementID, dataAttribute, boolValue) {
-	if (boolValue)
-		text = document
-			.querySelector(`#${elementID}`)
-			.getAttribute(`${dataAttribute}`);
+	if (boolValue) text = document.querySelector(`#${elementID}`).getAttribute(`${dataAttribute}`);
 	else text = document.querySelector(`#${elementID}`).textContent;
 	const randomElement = document.createElement('textarea');
 	randomElement.classList.add('randomElement');
