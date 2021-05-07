@@ -1,163 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="16x16" href="./media/titleBar/titleBarIcon.png">
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./media/titleBar/titleBarIcon.png"
+		/>
 
-  <link id="themeFile" rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/notification.css">
-  <link rel="stylesheet" href="css/mediaQuery.css">
+		<link id="themeFile" rel="stylesheet" href="css/variables.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/notification.css" />
+		<link rel="stylesheet" href="css/mediaQuery.css" />
 
-  <title>Dummy REST API's</title>
-</head>
-<body>
+		<title>Dummy REST API's</title>
+	</head>
+	<body>
+		<!-- Message Dialog Box -->
+		<div id="messageBox">
+			<div class="flex justify-center align-center">
+				<img id="messageBox_icon" src="./media/info25.png" />
+			</div>
+			<div id="messageBox_contentDv">
+				<label id="messageBox_heading">Copied...</label>
+				<label id="messageBox_message">Selected text copied successfully</label>
+			</div>
+		</div>
 
-  <!-- Message Dialog Box -->
-  <div id="messageBox">
-    <div class="flex justify-center align-center">
-      <img id="messageBox_icon" src="./media/info25.png">
-    </div>
-    <div id="messageBox_contentDv">
-      <label id="messageBox_heading">Copied...</label>
-      <label id="messageBox_message">Selected text copied successfully</label>
-    </div>
-  </div>
+		<section id="header">
+			<div id="headerContent_dv">
+				<h1 class="flex justify-center">Dummy REST API's</h1>
+				<hr />
+				<p class="flex justify-center">
+					Ready to use REST-API Service to respond to your requests. Test your
+					front- end against a real API , fake data.
+				</p>
+			</div>
+			<div id="headerCards_dv">
+				<div class="header_card" id="header_card1">
+					<h1 class="header_cardHeading">Fake Data</h1>
+					<p class="header_cardContent">
+						No more tedious sample data creation, we've got it covered.
+					</p>
+				</div>
 
-  <section id="header">
-    <div id="headerContent_dv">
-      <h1 class="flex justify-center">Dummy REST API's</h1>
-      <hr>
-      <p class="flex justify-center">Ready to use REST-API Service to respond to your requests. Test your front- end against a real API , fake data.</p>
-    </div>
-    <div id="headerCards_dv">
-      <div class="header_card" id="header_card1">
-        <h1 class="header_cardHeading">Fake Data</h1>
-        <p class="header_cardContent">No more tedious sample data creation, we've got it covered.</p>
-      </div>
+				<div class="header_card" id="header_card2">
+					<h1 class="header_cardHeading">Real Responses</h1>
+					<p class="header_cardContent">
+						Develop with real response codes. GET, POST, PUT & DELETE supported.
+					</p>
+				</div>
 
-      <div class="header_card" id="header_card2">
-        <h1 class="header_cardHeading">Real Responses</h1>
-        <p class="header_cardContent">Develop with real response codes. GET, POST, PUT & DELETE supported.</p>
-      </div>
+				<div class="header_card" id="header_card3">
+					<h1 class="header_cardHeading">Always-On</h1>
+					<p class="header_cardContent">
+						24/7 free access in your development phases.
+					</p>
+				</div>
+			</div>
+		</section>
 
-      <div class="header_card" id="header_card3">
-        <h1 class="header_cardHeading">Always-On</h1>
-        <p class="header_cardContent">24/7 free access in your development phases.</p>
-      </div>
-    </div>
-  </section>
+		<section id="console" class="flex justify-center align-center">
+			<div id="consoleTable_dv">
+				<div id="consoleTable_headingDv">
+					<div class="tableHeadingDv" id="resourcesHeading_dv">
+						<!-- <label class="tableHeading_label">Resources</label> -->
+						<!-- <label id="labelResources_Value" class="tableHeading_labelVal"></label> -->
+					</div>
+					<div
+						class="tableHeadingDv tableHeading_Border"
+						id="requestHeading_dv"
+					>
+						<img id="requestBackgroundImg" src="./media/send.png" />
+						<label class="tableHeading_label">Request</label>
+						<label
+							id="labelRequest_Value"
+							class="tableHeading_labelVal"
+						></label>
+					</div>
+					<div
+						class="tableHeadingDv tableHeading_Border"
+						id="responseHeading_dv"
+					>
+						<img id="responseBackgroundImg" src="./media/send.png" />
+						<label class="tableHeading_label">Response</label>
+						<label
+							id="labelResponse_Value"
+							class="tableHeading_labelVal"
+						></label>
+					</div>
+				</div>
+				<div id="consoleTable_contentDv">
+					<div
+						class="contentDv contentDv_border"
+						id="resources_contentDv"
+					></div>
+					<pre
+						class="contentDv contentDv_border hidden"
+						id="requestBody_tag"
+					></pre>
+					<pre
+						class="contentDv contentDv_border hidden"
+						id="responseBody_tag"
+					></pre>
+				</div>
+			</div>
+		</section>
 
-  <section id="console" class="flex justify-center align-center">
-    <div id="consoleTable_dv">
-      <div id="consoleTable_headingDv">
-        <div class="tableHeadingDv" id="resourcesHeading_dv">
-          <!-- <label class="tableHeading_label">Resources</label> -->
-          <!-- <label id="labelResources_Value" class="tableHeading_labelVal"></label> -->
-        </div>
-        <div class="tableHeadingDv tableHeading_Border" id="requestHeading_dv">
-          <img id="requestBackgroundImg" src="./media/send.png">
-          <label class="tableHeading_label">Request</label>
-          <label id="labelRequest_Value" class="tableHeading_labelVal"></label>
-        </div>
-        <div class="tableHeadingDv tableHeading_Border" id="responseHeading_dv">
-          <img id="responseBackgroundImg" src="./media/send.png">
-          <label class="tableHeading_label">Response</label>
-          <label id="labelResponse_Value" class="tableHeading_labelVal"></label>
-        </div>
-      </div>
-      <div id="consoleTable_contentDv">
-        <div class="contentDv contentDv_border" id="resources_contentDv"></div>
-        <pre class="contentDv contentDv_border hidden" id="requestBody_tag"></pre>
-        <pre class="contentDv contentDv_border hidden" id="responseBody_tag"></pre>
-      </div>
-    </div>
-  </section>
+		<section id="support">
+			<h1>Peace of mind</h1>
+			<br />
+			<p>
+				It might seem pretty weird to be sending your data to a 3rd party API,
+				but I can assure you, FakeRestAPI does not store any of your data at
+				all. Once you send it to us, we just send it straight back...and then
+				it's gone!
+			</p>
+			<br />
+			<h1>Support</h1>
+			<p>
+				<span
+					>fakeRestAPI serves nearly
+					<strong>100 million requests each month</strong>, and is provided
+					free-of-charge.</span
+				>
+				<br />
+				<span
+					>To keep FakeRestAPI free, contributions towards server costs are
+					appreciated!</span
+				>
+				<br /><br />
+				<input type="radio" id="ruppees100" name="payment" value="100" />
+				<label class="radioBtnLabel">One Time Payment (Rs 100)</label>
+				<br />
+				<input type="radio" id="ruppees250" name="payment" value="250" />
+				<label class="radioBtnLabel">One Time Payment (Rs 250)</label>
+				<br /><br />
+				<button id="supportBtn">SUPPORT FakeRestAPI</button>
+				<br /><br />
+				<span
+					>Selecting either option will redirect you to a hosted Razorpay
+					Checkout page to complete payment.</span
+				>
+			</p>
+		</section>
 
-  <section id="host" class="flex justify-center align-center">
-    <div id="hostContainer">
-      <div class="hostChild" id="hostTable_firstChild">
-        <img src="./media/hosted-icon64.png">
-        <p>
-          <strong>Hosted on <a href="https://www.heroku.com/">Heroku</a></strong>
-        </p>
-        <p>
-          <span>Which means 99.99% Uptime SLA.</span>
-          <br>
-          <span>All you need is the base URL, and you're away:</span>
-          <br>
-          <br>
-          <span id="baseURL">https://fakerestapi.in/api/</span>
-          <br>
-          <br>
-          <span>The API is CORS enabled, so you can make requests right from the browser, no matter what domain, or even from somewhere like JSFiddle or JSBin.</span>
-        </p>
-      </div>
-      <div class="hostChild" id="hostTable_secondChild">
-        <img src="./media/json-icon64.png">
-        <p>
-          <strong>Language Agnostic</strong>
-        </p>
-        <p>
-          <span>A generic API that conforms to REST principles and accepts a content type of</span>
-          <br>
-          <br>
-          <span id="baseURL">application/json</span>
-          <br>
-          <br>
-          <span>Any endpoint that contains RESOURCE can be substituted with anything you supply, ie. "products", "accounts", etc..the API will just respond with various Pantone colours.</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="gettingStarted" class="flex justify-center align-center">
-    <h1 class="flex justify-center">Getting Started</h1>
-    <div id="gettingStarted_ContentDv">
-      <div class="languageContentDv">
-        <div class="languageBtn flex justify-center align-center">JQuery</div>
-        <p>If you, for example, want to create a fake user:</p>
-        <pre id="JQuery_requestElement" class="contentDv contentDv_border"></pre>
-        <p>For which the response to this request will be...</p>
-        <pre id="JQuery_responseElement" class="contentDv contentDv_border"></pre>
-      </div>
-      <div class="languageContentDv">
-        <div class="languageBtn flex justify-center align-center">Javascript</div>
-        <p>If you've already got your own application entities, ie. "products", you can send them in the endpoint URL, like so:</p>
-        <pre id="Javascript_requestElement" class="contentDv contentDv_border"></pre>
-        <p>It would be impossible for Reqres to know your application data, so the API will respond from a sample set of Pantone colour data</p>
-        <pre id="Javascript_responseElement" class="contentDv contentDv_border"></pre>
-      </div>
-    </div>
-  </section>
-
-  <section id="support">
-    <h1>Peace of mind</h1>
-    <br>
-    <p>It might seem pretty weird to be sending your data to a 3rd party API, but I can assure you, FakeRestAPI does not store any of your data at all. Once you send it to us, we just send it straight back...and then it's gone!</p>
-    <br>
-    <h1>Support</h1>
-    <p>
-      <span>fakeRestAPI serves nearly <strong>100 million requests each month</strong>, and is provided free-of-charge.</span>
-      <br>
-      <span>To keep FakeRestAPI free, contributions towards server costs are appreciated!</span>
-      <br><br>
-      <input type="radio" id="ruppees100" name="payment" value="100">
-      <label class="radioBtnLabel">One Time Payment (Rs 100)</label>
-      <br>
-      <input type="radio" id="ruppees250" name="payment" value="250">
-      <label class="radioBtnLabel">One Time Payment (Rs 250)</label>
-      <br><br>
-      <button id="supportBtn">SUPPORT FakeRestAPI</button>
-      <br><br>
-      <span>Selecting either option will redirect you to a hosted Razorpay Checkout page to complete payment.</span>
-    </p>
-  </section>
-
-  <!-- Scripting Files -->
-  <script src="./js/index.js"></script>
-</body>
+		<!-- Scripting Files -->
+		<script src="./js/index.js"></script>
+	</body>
 </html>
