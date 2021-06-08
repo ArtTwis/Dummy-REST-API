@@ -205,6 +205,19 @@ app.get('/api/resources/posts/:post', (req, res) => {
 	}
 });
 
+app.get('/api/statuscode/:statuscode', (req, res) => {
+	let statusCode = Number(req.params.statuscode);
+
+	let today = new Date();
+	let str = today.toGMTString();
+
+	if (isNaN(statusCode)) {
+		res.status(404).json({ msg: 'please enter valid status code' });
+	} else {
+		res.status(statusCode).json({ status: 'requestSuccess', msg: 'Here you go', requestAt: str });
+	}
+});
+
 /*
 ==========================
 ======= POST Method ======
