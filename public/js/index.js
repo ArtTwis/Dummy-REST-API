@@ -1,5 +1,5 @@
 // const apiendpoint = 'http://localhost:1818';
-const apiendpoint = 'https://restapicall.herokuapp.com';
+const apiendpoint = 'https://arttwis.github.io/Dummy-REST-API';
 const bodyObject = {};
 
 (function () {
